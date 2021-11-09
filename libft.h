@@ -6,7 +6,7 @@
 /*   By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 13:44:58 by obouadel          #+#    #+#             */
-/*   Updated: 2021/11/07 11:43:22 by obouadel         ###   ########.fr       */
+/*   Updated: 2021/11/08 20:44:18 by obouadel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+
+typedef struct s_list
+{ 
+	void            *content;
+    struct s_list   *next;
+}   t_list;
 
 int		ft_isalnum(int c);
 void	*ft_calloc(size_t count, size_t size);
@@ -52,5 +58,10 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
+t_list  *ft_lstnew(void *content);
+t_list  *ft_lstlast(t_list *lst);
+int     ft_lstsize(t_list *lst);
+void    ft_lstadd_front(t_list **lst, t_list *new);
+void    ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif

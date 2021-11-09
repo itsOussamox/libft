@@ -6,7 +6,7 @@
 /*   By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 20:28:24 by obouadel          #+#    #+#             */
-/*   Updated: 2021/11/07 11:52:30 by obouadel         ###   ########.fr       */
+/*   Updated: 2021/11/08 18:00:33 by obouadel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,14 @@ static int	words_len(char const *s, char c)
 	return (len);
 }
 
+static char	**ft_free(char **split, int i)
+{
+	i--;
+	while (i >= 0)
+		free(split[i--]);
+	return (0);
+}
+
 static char	**splitfill(char const *s, int words, char c, char **splitted)
 {
 	int	i;
@@ -57,7 +65,7 @@ static char	**splitfill(char const *s, int words, char c, char **splitted)
 		len = words_len(s, c);
 		splitted[i] = (char *)malloc(sizeof(char) * (len + 1));
 		if (splitted == NULL)
-			return (NULL);
+			return (ft_free(splitted, i));
 		j = 0;
 		while (j < len)
 			splitted[i][j++] = *s++;
@@ -80,27 +88,7 @@ char	**ft_split(char	const *s, char c)
 	if (splitted == NULL)
 		return (NULL);
 	splitted = splitfill(s, words, c, splitted);
+	if (!splitted)
+		free(splitted);
 	return (splitted);
 }
-/* #include <stdio.h>
-   int main()
-   {
-   char **dd;
-   dd = ft_split("      hello hds    dj        n      ", ' ');
-   int i,j;
-
-   i = 0;
-   j = 0;
-   while (dd[i])
-   {
-   j = 0;
-   while (dd[i][j])
-   {
-   printf("%c", dd[i][j]);
-   j++;
-   }
-   printf("\n");
-   i++;
-   }
-   return 0;
-   } */

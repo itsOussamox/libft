@@ -6,7 +6,7 @@
 /*   By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:41:10 by obouadel          #+#    #+#             */
-/*   Updated: 2021/11/06 21:08:56 by obouadel         ###   ########.fr       */
+/*   Updated: 2021/11/08 15:19:57 by obouadel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	beg = 0;
 	end = ft_strlen(s1) - 1;
-	if (!s1)
-		return (0);
-	if (!set)
-		return (ft_strdup(s1));
 	while (s1[beg] && !ft_setfound(s1[beg], set))
 		beg++;
 	while (beg < end && !ft_setfound(s1[end], set))
