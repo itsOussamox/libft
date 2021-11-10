@@ -6,7 +6,7 @@
 #    By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 10:36:02 by obouadel          #+#    #+#              #
-#    Updated: 2021/11/09 12:15:48 by obouadel         ###   ########.fr        #
+#    Updated: 2021/11/10 18:38:51 by obouadel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME):$(OBJ)
 %.o : %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-bonus: all $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
 	$(AR) $(NAME) $(BONUS_OBJS)
 clean:
 	$(RM) $(OBJ)

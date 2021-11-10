@@ -6,7 +6,7 @@
 /*   By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:48:15 by obouadel          #+#    #+#             */
-/*   Updated: 2021/11/06 11:53:20 by obouadel         ###   ########.fr       */
+/*   Updated: 2021/11/10 19:29:10 by obouadel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	if (s1 == 0 || s2 == 0)
+	if (!s1 || !s2)
 		return (0);
 	join = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!join)
