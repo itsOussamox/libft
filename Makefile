@@ -6,7 +6,7 @@
 #    By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 10:36:02 by obouadel          #+#    #+#              #
-#    Updated: 2021/11/10 18:38:51 by obouadel         ###   ########.fr        #
+#    Updated: 2021/11/10 20:14:30 by obouadel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ OBJ= $(FILES:=.o)
 BONUS_OBJS= $(BONUSFILES:=.o)
 NAME =libft.a
 
-.PHONY:all clean fclean re
 
 all:$(NAME)
 
@@ -46,3 +45,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re : fclean all
+
+.PHONY:all clean fclean re
