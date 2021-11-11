@@ -6,7 +6,7 @@
 /*   By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:22:38 by obouadel          #+#    #+#             */
-/*   Updated: 2021/11/08 18:04:11 by obouadel         ###   ########.fr       */
+/*   Updated: 2021/11/11 16:11:13 by obouadel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		sub = ft_strdup("");
 		return (sub);
 	}
-	if (len <= ft_strlen(s))
+	if (len <= ft_strlen(s) - start)
 		sub = (char *)malloc(len + 1);
 	else
 		sub = (char *)malloc((ft_strlen(s) - start + 1));

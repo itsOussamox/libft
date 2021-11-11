@@ -6,35 +6,32 @@
 /*   By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:48:15 by obouadel          #+#    #+#             */
-/*   Updated: 2021/11/10 19:29:10 by obouadel         ###   ########.fr       */
+/*   Updated: 2021/11/11 17:29:52 by obouadel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *str1, char const *str2)
 {
-	char	*join;
-	int		i;
-	int		j;
+	char	*table;
+	int		index;
+	int		len1;
+	int		len2;
 
-	i = 0;
-	j = 0;
-	if (!s1 || !s2)
+	if (str1 == 0)
 		return (0);
-	join = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!join)
+	index = 0;
+	table = 0;
+	if (str2 == 0)
+		len2 = 0;
+	else
+		len2 = ft_strlen((char *)str2);
+	len1 = ft_strlen((char *)str1);
+	table = (char *)ft_calloc(sizeof(char) * ((len1 + len2) + 1), sizeof(char));
+	if (table == 0)
 		return (0);
-	while (s1[i])
-	{
-		join[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		join[i + j] = s2[j];
-		j++;
-	}
-	join[i + j] = '\0';
-	return (join);
+	ft_strlcat(table, str1, len1 + 1);
+	ft_strlcat(table, str2, len1 + len2 + 1);
+	return (table);
 }

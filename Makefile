@@ -6,7 +6,7 @@
 #    By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 10:36:02 by obouadel          #+#    #+#              #
-#    Updated: 2021/11/10 20:14:30 by obouadel         ###   ########.fr        #
+#    Updated: 2021/11/11 15:36:19 by obouadel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ FILES= ft_isdigit ft_memset ft_strjoin ft_isprint\
 	ft_memcmp ft_strncmp ft_isalpha ft_memcpy ft_strchr\
 	ft_strnstr ft_isascii ft_memmove ft_strdup ft_strrchr\
 	ft_strtrim ft_striteri ft_split
-BONUSFILES= ft_lstadd_front ft_lstnew ft_lstsize ft_lstlast ft_lstadd_back
+BONUSFILES= ft_lstadd_front ft_lstnew ft_lstsize ft_lstlast ft_lstadd_back\
+	ft_lstdelone ft_lstiter ft_lstclear
 SRC = $(FILES:=.c)
 OBJ= $(FILES:=.o)
 BONUS_OBJS= $(BONUSFILES:=.o)

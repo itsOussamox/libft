@@ -6,7 +6,7 @@
 /*   By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:43:53 by obouadel          #+#    #+#             */
-/*   Updated: 2021/11/06 21:15:52 by obouadel         ###   ########.fr       */
+/*   Updated: 2021/11/11 16:12:06 by obouadel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*map;
 	unsigned int	i;
 
-	if (!s)
+	if (!s || !f)
 		return (0);
 	i = 0;
 	map = ft_strdup(s);
